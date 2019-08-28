@@ -16,7 +16,6 @@ public class CustomerRestExceptionHandler {
 		CustomerErrorResponse error = new CustomerErrorResponse(HttpStatus.NOT_FOUND.value(),
 																e.getMessage(), 
 																System.currentTimeMillis());
-		
 		// return ResponseEntity
 		return new ResponseEntity<>(error , HttpStatus.NOT_FOUND);
 	}
@@ -29,7 +28,6 @@ public class CustomerRestExceptionHandler {
 		CustomerErrorResponse error = new CustomerErrorResponse(HttpStatus.BAD_REQUEST.value(),
 																e.getMessage(), 
 																System.currentTimeMillis());
-		
 		// return ResponseEntity
 		return new ResponseEntity<>(error , HttpStatus.BAD_REQUEST);
 	}
