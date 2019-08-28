@@ -24,7 +24,6 @@ public class CustomerRestController {
 	private CustomerService customerService;
 	private Customer customer;
 	
-	// add mapping for GET / customers
 	@GetMapping("/customers")
 	public List<Customer> getCustomers() {
 		
@@ -64,7 +63,7 @@ public class CustomerRestController {
 	}
 	
 	@DeleteMapping("/customers/{customerId}")
-	public Customer deleteCustomer(@PathVariable int customerId) {
+	public String deleteCustomer(@PathVariable int customerId) {
 		
 		Customer theCustomer = customerService.getCustomer(customerId);
 		
@@ -74,7 +73,7 @@ public class CustomerRestController {
 		
 		customerService.deleteCustomer(customerId);
 		
-		return theCustomer;
+		return "Deleted customer id - " + customerId;
 	}
 	
 	
